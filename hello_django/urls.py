@@ -21,4 +21,8 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', index),
     url(r'^home/$', home),
+    url(r'^insert_data', insert_data),
+    url(r'^search_contact', search_contact),
+    url(r'^delete_contact/(\d+)', delete_contact),
+    url(r'^detail/(\d+)', detail)
 ]
