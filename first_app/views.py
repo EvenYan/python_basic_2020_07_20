@@ -34,3 +34,16 @@ def delete_contact(request, pk):
 def detail(request, id):
     c = Contact.objects.get(id=id)
     return render(request, "first_app/detail.html", context={"contact": c})
+
+
+def register(request):
+    return render(request, 'first_app/register.html')
+
+
+
+def deal_register(request):
+    username = request.POST.get("username")
+    phone_number = request.POST.get("phone_number")
+    passwd = request.POST.get("passwd")
+    print(username, phone_number, passwd)
+    return HttpResponse("注册成功！")

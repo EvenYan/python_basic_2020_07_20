@@ -24,5 +24,7 @@ urlpatterns = [
     url(r'^insert_data', insert_data),
     url(r'^search_contact', search_contact),
     url(r'^delete_contact/(\d+)', delete_contact),
-    url(r'^detail/(\d+)', detail)
+    url(r'^detail/(\d+)', detail),
+    url(r'^register', register),
+    url(r'^deal_register', deal_register),
 ]
