@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from first_app.models import Contact
+from first_app.tools import gen_passwd
 
 
 # Create your views here.
@@ -46,4 +47,6 @@ def deal_register(request):
     phone_number = request.POST.get("phone_number")
     passwd = request.POST.get("passwd")
     print(username, phone_number, passwd)
+    passwd = gen_passwd(passwd)
+    Contact.objects.create(name=username, phone_number=phone_number, passwd=passwd)
     return HttpResponse("注册成功！")
